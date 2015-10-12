@@ -7,7 +7,6 @@ var options = {
 var fields = ['name'];
 
 ChannelSearch = new SearchSource('channels', fields, options);
-//ChannelSearch.search('');
 
 Template.explore.onRendered(function () {
     ChannelSearch.search('');
@@ -24,7 +23,6 @@ Template.explore.helpers({
     },
 
     isLoading: function() {
-
         return ChannelSearch.getStatus().loading;
     }
 });
@@ -34,6 +32,5 @@ Template.explore.events({
     'keyup #searchBox': _.throttle(function(e) {
         var text = $(e.target).val().trim();
         ChannelSearch.search(text);
-
     }, 200)
 });
