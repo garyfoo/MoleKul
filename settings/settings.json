@@ -3,6 +3,5 @@
   "acl": "public-read",
   "AWSAccessKeyId": "AKIAIFKSJNPL3AELY43A",
   "AWSSecretAccessKey": "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",
-  "region": "ap-southeast-2",
-  "googleApiKey": "AIzaSyB2PAQSygmg15Wr5t6IfqEjug3Y1JUf5eE"
+  "region": "ap-southeast-2"
 }
