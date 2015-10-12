@@ -1,2 +1,50 @@
 # MoleKul
 Bonds have been stronger
+
+##Used Packages
+
+```
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+session                 # Client-side reactive dictionary for your app
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+fourseven:scss@2.0.0
+meteoric:ionic-sass
+meteoric:ionicons-sass
+meteoric:ionic
+semantic:ui-css
+iron:router
+aldeed:autoform
+aldeed:collection2
+u2622:persistent-session
+msavin:jetsetter
+okland:camera-ui
+edgee:slingshot
+momentjs:moment
+ongoworks:security
+dburles:google-maps
+jeremy:geocomplete
+fastclick
+mdg:geolocation
+jaymc:google-reverse-geocode
+matb33:collection-hooks
+accounts-password
+useraccounts:iron-routing
+aldeed:template-extension
+useraccounts:ionic
+dburles:collection-helpers
+reywood:publish-composite
+meteorhacks:subs-manager
+reactive-var
+zimme:active-route
+meteorhacks:search-source
+ejson
+check
+```
