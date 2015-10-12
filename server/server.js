@@ -26,6 +26,7 @@ Slingshot.createDirective("myFileUploads", Slingshot.S3Storage, {
         return Date.now().toString();
     }
 });
+
 SearchSource.defineSource('channels', function(searchText, options) {
     //var options = {limit: 20};
 
