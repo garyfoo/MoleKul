@@ -1,0 +1,26 @@
+<template name="explore">
+    <div class="bar bar-header bar-light item-input-inset">
+        <label class="item-input-wrapper">
+            {{> ionIcon icon="ios-search" class="placeholder-icon"}}
+            <input type="search" placeholder="Search" id="searchBox">
+        </label>
+    </div>
+    {{#ionView}}
+        {{#ionContent class="has-header has-search-bar"}}
+            <div class="item item-divider">
+                Channels
+            </div>
+            {{#each getChannels}}
+                <a class="item" href={{pathFor route='channel.show' _id=this._id}}>
+                    <img class="ui mini rounded image channelMenuImg" src="{{image}}">
+                    #{{name}}
+                </a>
+            {{/each}}
+            <div id="search-meta">
+                {{#if isLoading}}
+                    {{> ionSpinner icon="crescent"}}
+                {{/if}}
+            </div>
+        {{/ionContent}}
+    {{/ionView}}
+</template>
