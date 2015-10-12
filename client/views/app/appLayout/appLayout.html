@@ -1,0 +1,32 @@
+<template name="appLayout">
+    {{#ionBody}}
+        {{#ionSideMenuContainer}}
+
+            {{#ionSideMenus}}
+
+                {{#ionSideMenu side="left"}}
+                    {{> yield "leftMenu"}}
+                {{/ionSideMenu}}
+
+                {{#ionSideMenu side="right"}}
+                    {{> channelMenu}}
+                {{/ionSideMenu}}
+
+            {{/ionSideMenus}}
+
+            {{#ionSideMenuContent}}
+
+                {{> yield "nav"}}
+
+                {{#ionNavView}}
+                    {{> yield}}
+                {{/ionNavView}}
+
+                {{> yield "footer"}}
+
+            {{/ionSideMenuContent}}
+
+        {{/ionSideMenuContainer}}
+
+    {{/ionBody}}
+</template>

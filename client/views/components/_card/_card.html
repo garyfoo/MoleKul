@@ -1,0 +1,31 @@
+<template name="_card">
+    <div class="card">
+        {{#if images}}
+            <a class="image" href="{{pathFor route="wish.show" _id=this._id}}">
+                <div class="ui active dimmer">
+                    <div class="ui loader"></div>
+                </div>
+                <img class="imgLoad" src={{images}}>
+            </a>
+        {{/if}}
+        <a class="content" href="{{pathFor route="wish.show" _id=this._id}}">
+            <!--<div class="right floated meta">{{wishDate createdAt}}</div>-->
+            <div class="header">{{title}}</div>
+            <div class="description">
+                {{description}}
+            </div>
+            <!--<div class="right floated meta">Brisbane, Queensland</div>-->
+        </a>
+        <div class="extra content">
+            {{> likeButton}}
+            <a href="{{pathFor route="wish.show" _id=this._id}}" style="padding-left: 10px;">
+                <i class="comment outline icon"></i>{{commentCount _id}} Reply
+            </a>
+            {{#with author}}
+                <a class="right floated author" href="{{pathFor route="user.show" _id=this._id}}">
+                    <img class="ui avatar image" src="{{profile.image}}">
+                </a>
+            {{/with}}
+        </div>
+    </div>
+</template>

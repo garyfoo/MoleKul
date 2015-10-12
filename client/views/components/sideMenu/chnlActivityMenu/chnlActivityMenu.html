@@ -1,0 +1,24 @@
+<template name="chnlActivityMenu">
+    <div class="content">
+        <div class="list">
+            <div class="item item-image null-border">
+                <img class="profile" src="{{channel.image}}">
+            </div>
+            <div class="item item-text-wrap">
+                <h2>#{{channel.name}}</h2>
+                <p>{{channel.description}}</p>
+            </div>
+            {{#if subscribedChnl}}
+                <div id="subscribeChnl" class="item item-icon-left">
+                    {{> ionIcon icon='ios-flame energized'}}
+                    Subscribe
+                </div>
+            {{else}}
+                <div id="subscribeChnl" class="item item-icon-left">
+                    {{> ionIcon icon='ios-flame-outline'}}
+                    Subscribe
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</template>

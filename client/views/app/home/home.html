@@ -1,0 +1,44 @@
+<template name="home">
+    {{#contentFor "headerButtonLeft"}}
+        <button class="button button-clear" data-ion-menu-toggle="left">
+            <img class="ui mini rounded image" src={{user.profile.image}}>
+        </button>
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">MoleKul</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear button-positive" data-ion-menu-toggle="right">
+            {{> ionIcon icon='ios-list-outline'}}
+        </button>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent class="padding-vertical"}}
+            {{#if wishesExist}}
+                {{#each wishes}}
+                    {{#ionList}}
+                        <div class="ui centered cards">
+                            {{> _card}}
+                        </div>
+                    {{/ionList}}
+                {{/each}}
+                {{#if moreResults}}
+                    <div id="showMoreResults" style="margin-left: 25px;">
+                        {{> ionSpinner icon="crescent"}}
+                    </div>
+                {{/if}}
+            {{else}}
+                <h1 class="ui header intro-chnl-txt">
+                    Uh-oh!
+                    <br>
+                    <div class="sub header">
+                        It seems like there hasn't been any content available in the channels you are subscribed to!
+                    </div>
+                </h1>
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

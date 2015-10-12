@@ -1,0 +1,29 @@
+<template name="chnlListMenu">
+    <div class="content">
+        <div class="list">
+            <div class="item item-divider" style="min-height: 44px;padding-top: 14px;">
+                Channels
+                <a href="{{pathFor route="newchannel"}}" class="button button-clear button-positive add-channel-btn">
+                    {{> ionIcon icon='plus-round positive' }}
+                </a>
+                {{#if addChannels}}
+                    <a href="{{pathFor route="explore"}}" class="button button-clear button-positive search-channel-btn">
+                        {{> ionIcon icon='ios-search-strong positive' }}
+                    </a>
+                {{/if}}
+            </div>
+            {{#each userChannels}}
+                <a class="item {{isActivePath path class='assertive closeMenu'}}" href={{pathFor route='channel.show' _id=this._id}}>
+                    <img class="ui mini rounded image channelMenuImg" src={{image}}>
+                    #{{name}}
+                </a>
+            {{/each}}
+            {{#each subscribedChannels}}
+                <a class="item {{isActivePath path class='assertive closeMenu'}}" href={{pathFor route='channel.show' _id=this._id}}>
+                    <img class="ui mini rounded image channelMenuImg" src={{image}}>
+                    #{{name}}
+                </a>
+            {{/each}}
+        </div>
+    </div>
+</template>
