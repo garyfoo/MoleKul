@@ -63,6 +63,7 @@ mdg:camera@1.1.5
 mdg:geolocation@1.1.0
 meteor@1.1.9
 meteor-base@1.0.1
+meteorhacks:subs-manager@1.6.2
 meteoric:ionic@0.1.19
 meteoric:ionic-sass@0.1.9
 meteoric:ionicons-sass@0.1.6

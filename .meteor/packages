@@ -42,3 +42,5 @@ aldeed:template-extension
 useraccounts:ionic
 dburles:collection-helpers
 reywood:publish-composite
+meteorhacks:subs-manager
+reactive-var

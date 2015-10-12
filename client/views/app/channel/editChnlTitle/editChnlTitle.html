@@ -1,0 +1,23 @@
+<template name="editChnlTitle">
+    <div class="bar bar-header bar-light">
+        {{>ionNavBackButton class="button-positive" text=false}}
+        <h1 class="title">Edit Title</h1>
+        <button class="button button-clear pull-right button-positive save">
+            Save
+        </button>
+    </div>
+
+    {{#ionView}}
+        {{#ionContent class="padding-horizontal has-footer has-header"}}
+            <textarea rows="20" id="editTitleInput" placeholder="#yourdesiredtitle" maxlength="35" style="width: 100%" value="{{addChnlTitleInput}}"></textarea>
+        {{/ionContent}}
+        <div class="bar bar-footer bar-light" data-keyboard-attach>
+            <button class="button button-clear button-positive pull-left">
+                {{titleCount}}
+            </button>
+            <button class="button button-positive button-clear pull-right">
+                {{> ionIcon icon='android-bulb'}}
+            </button>
+        </div>
+    {{/ionView}}
+</template>
