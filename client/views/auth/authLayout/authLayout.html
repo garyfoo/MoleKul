@@ -1,10 +1,9 @@
 <template name="authLayout">
-    {{> yield region='authNav'}}
-
-    {{#ionView}}
-        {{#ionContent}}
+    {{#ionBody}}
+        {{> yield region='authNav'}}
+        {{#ionNavView}}
             {{> yield}}
-        {{/ionContent}}
+        {{/ionNavView}}
         {{> yield region='authFooter'}}
-    {{/ionView}}
+    {{/ionBody}}
 </template>
