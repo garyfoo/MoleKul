@@ -24,6 +24,10 @@ Meteor.publishComposite('homefeed', function(limit) {
     };
 });
 
+Meteor.publish('userChannels', function(channelQuery) {
+    return Channels.find({_id: {$in: channelQuery}}, {fields: {name: 1, owner: 1, image: 1}});
+});
+
 Meteor.publishComposite('channelfeed', function(channelId) {
     return {
         find: function() {

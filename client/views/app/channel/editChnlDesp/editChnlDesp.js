@@ -7,7 +7,7 @@ Template.editChnlDesp.events({
     },
     'click .save': function() {
         Session.setPersistent('addChnlDescriptionInput', filterDesp($('#editDescriptionInput').val()));
-        Router.go('newchannel');
+        Router.go('addchannel');
     }
 });
 

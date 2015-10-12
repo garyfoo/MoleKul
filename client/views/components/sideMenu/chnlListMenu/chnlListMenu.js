@@ -1,28 +1,37 @@
 /**
  * Created by garie on 12/10/2015.
  */
-Template.channelListMenu.onCreated(function () {
-    this.autorun(function () {
-        if (Meteor.user()) {
-            this.subscription = Meteor.subscribe('userChannels', Meteor.user().profile.subscriptions);
-        }
-    }.bind(this));
+
+Template.chnlListMenu.onCreated(function () {
+    var self = this;
+    self.ready = new ReactiveVar();
+    if (Meteor.user()) {
+        self.autorun(function () {
+            var handle = subsMgr.subscribe('userChannels', Meteor.user().profile.subscriptions);
+            self.ready.set(handle.ready());
+        });
+    }
 });
 
-Template.channelListMenu.helpers({
+
+Template.chnlListMenu.helpers({
     userChannels: function () {
-        return Channels.find({$and: [{owner: Meteor.userId()}, {_id: {$in: Meteor.user().profile.subscriptions}}]});
+        if(Meteor.user()){
+            return Channels.find({$and: [{owner: Meteor.userId()}, {_id: {$in: Meteor.user().profile.subscriptions}}]});
+        }
     },
     subscribedChannels: function () {
-        return Channels.find({$and: [{owner: {$ne: Meteor.userId()}}, {_id: {$in: Meteor.user().profile.subscriptions}}]});
+        if(Meteor.user()){
+            return Channels.find({$and: [{owner: {$ne: Meteor.userId()}}, {_id: {$in: Meteor.user().profile.subscriptions}}]});
+        }
     },
-    path: function() {
+    path: function () {
         return '/channel/' + this._id;
     }
 });
 
-Template.channelListMenu.events({
-    'click .closeMenu': function(){
+Template.chnlListMenu.events({
+    'click .closeMenu': function () {
         IonSideMenu.snapper.close();
     }
 });

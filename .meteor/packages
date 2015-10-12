@@ -44,3 +44,5 @@ dburles:collection-helpers
 reywood:publish-composite
 meteorhacks:subs-manager
 reactive-var
+zimme:active-route
+meteorhacks:search-source

@@ -18,7 +18,7 @@ Template.editChnlTitle.events({
     },
     'click .save': function() {
         Session.setPersistent('addChnlTitleInput', filterTitle($('#editTitleInput').val()));
-        Router.go('newchannel');
+        Router.go('addchannel');
     }
 });
 
