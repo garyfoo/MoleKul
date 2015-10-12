@@ -44,3 +44,4 @@ dburles:collection-helpers
 reywood:publish-composite
 meteorhacks:subs-manager
 reactive-var
+meteorhacks:search-source
