@@ -1,0 +1,63 @@
+.channelMenuImg {
+  display: inline-block !important;
+  margin-right: 5px !important;
+}
+
+.null-border {
+  border-width: 0 !important;
+}
+
+.snap-drawer {
+  width: 210px;
+}
+
+.wrapper {
+  position: relative !important;
+}
+
+.wraper-icon {
+  z-index: 1 !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 15px !important;
+}
+
+.button-custom,
+.button-custom .icon:before{
+  font-size: 25px !important;
+}
+
+.secondary-btn {
+  position: absolute !important;
+  right: 40px !important;
+}
+
+.iconSize:before {
+  font-size: 40px !important;
+}
+
+.disable-Touch {
+  pointer-events: none !important;
+}
+
+.add-channel-btn {
+  right: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  top: 0 !important;
+  position: absolute !important;
+}
+
+.search-channel-btn {
+  right: 30px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  top: 0 !important;
+  position: absolute !important;
+}
+
+.intro-chnl-txt {
+  padding-top: 20% !important;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+}
