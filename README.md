@@ -1,6 +1,5 @@
 # MoleKul
-Bonds have been stronger
-
+Molekul. It's kinda like a interest search engine where people can search for the interest and bond over a common interest. We aim to help people build communities based on their own hobbies and make new friends. 
 ##Used Packages
 
 ```
