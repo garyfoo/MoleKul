@@ -1,3 +1,59 @@
 <template name="addChannel">
+    {{#autoForm collection="Channels" id="insertChannelForm" type="insert"}}
+        <div class="bar bar-header bar-light">
+            {{>ionNavBackButton class="button-positive clear" path="home" text=false}}
+            <h1 class="title">Create a Channel</h1>
+            {{#if allowCreate}}
+                <button type="submit" class="button button-clear pull-right button-positive">
+                    Create
+                </button>
+            {{else}}
+                <button type="submit" class="button button-clear pull-right button-positive" disabled>
+                    Create
+                </button>
+            {{/if}}
+        </div>
 
+        {{#ionView}}
+            {{#ionContent}}
+                {{#ionList}}
+                    <div class="item item-image wrapper">
+                        {{#if addChannelImg}}
+                            <img src={{addChannelImg}}>
+                            <button class="button button-clear button-positive wraper-icon camera">
+                                {{> ionIcon class="iconSize" icon='ios-checkmark-outline light'}}
+                            </button>
+                        {{else}}
+                            <img src=http://semantic-ui.com/images/wireframe/image.png>
+                            <button class="button button-clear button-positive wraper-icon camera">
+                                {{> ionIcon class="iconSize" icon='ios-camera-outline light'}}
+                            </button>
+                        {{/if}}
+                    </div>
+                    <a class="item item-icon-right item-text-wrap" href={{pathFor route="editchnltitle"}}>
+                        {{#if addChnlTitleInput}}
+                            {{> ionIcon icon='ios-checkmark-outline positive'}}
+                            #{{addChnlTitleInput}}
+                        {{else}}
+                            {{> ionIcon icon='ios-arrow-right positive'}}
+                            Write Name
+                        {{/if}}
+                    </a>
+                    <a class="item item-icon-right item-text-wrap" href={{pathFor route="editchnldescription"}}>
+                        {{#if addChnlDescriptionInput}}
+                            {{> ionIcon icon='ios-checkmark-outline positive'}}
+                            {{addChnlDescriptionInput}}
+                        {{else}}
+                            {{> ionIcon icon='ios-arrow-right positive'}}
+                            Write Description
+                        {{/if}}
+                    </a>
+                {{/ionList}}
+            {{/ionContent}}
+        {{/ionView}}
+        {{> afQuickField name='name' type="hidden" value=addChnlTitleInput}}
+        {{> afQuickField name='description' type="hidden" value=addChnlDescriptionInput}}
+        {{> afQuickField name='owner' type="hidden" value=userId}}
+        {{> afQuickField name='subscriberIds' type="hidden" value=addSubscriberId}}
+    {{/autoForm}}
 </template>

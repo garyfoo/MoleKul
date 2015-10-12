@@ -1,0 +1,38 @@
+<template name="channelProfile">
+    {{#ionModal customTemplate=true}}
+        <div id="profileModal">
+            <div class="content overflow-scroll">
+                <div class="bar bar-header bar-light">
+                    <button data-dismiss="modal" type="button" class="button button-clear button-positive pull-left">
+                        {{> ionIcon icon='ios-close-empty'}}
+                    </button>
+                    <h1 class="title">#{{channel.name}}</h1>
+                    <!--<button data-dismiss="modal" class="button button-positive button-clear pull-right">
+                        {{> ionIcon icon='ios-camera'}}
+                    </button>-->
+                    <button class="button button-positive button-clear pull-right camera">
+                        {{> ionIcon icon='ios-camera'}}
+                    </button>
+                </div>
+                <div class="list has-header">
+                    {{#with channel}}
+                        <div class="item item-image">
+                            <img src={{image}}>
+                        </div>
+
+                        <div class="item">
+                            <h2>#{{name}}</h2>
+                        </div>
+
+                        <div class="item">
+                            <p>About #{{name}}</p>
+                        </div>
+                        <div class="item item-text-wrap">
+                            <p>{{description}}</p>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    {{/ionModal}}
+</template>

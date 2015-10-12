@@ -51,10 +51,6 @@ Meteor.publishComposite('channelfeed', function(channelId) {
     };
 });
 
-Meteor.publish('wishes', function() {
-    return Wishes.find();
-});
-
 Meteor.publishComposite('wish', function(_id) {
     return {
         find: function() {

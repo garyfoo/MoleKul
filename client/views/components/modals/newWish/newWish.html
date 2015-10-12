@@ -1,0 +1,33 @@
+<template name="newWish">
+    {{#ionModal customTemplate=true}}
+        <div id="insertWishModal">
+            {{#autoForm collection="Wishes" id="insertWishForm" type="insert"}}
+                <div class="bar bar-header bar-stable">
+                    <button data-dismiss="modal" type="button" id="cancel" class="button button-clear button-positive pull-left">
+                        {{> ionIcon icon='ios-close-empty'}}
+                    </button>
+                    <button type="submit" class="button button-positive button-clear pull-right" {{disableButton}}>
+                        Wish!
+                    </button>
+                </div>
+                {{#ionContent class="has-footer has-header padding"}}
+                    {{> afQuickField name='title' id='wishTitle' placeholder=" Make a wish!" label=false class="padding-bottom"}}
+                    {{> afQuickField name='description' id='wishDescription' placeholder=" Tell me more about your wish!" label=false}}
+                    <img class="ui small rounded image" src="{{photo}}">
+                {{/ionContent}}
+                <div class="bar bar-footer bar-light" data-keyboard-attach>
+                    <button class="button button-clear button-positive pull-left" id="camera">
+                        {{> ionIcon name='image' icon='ios-camera-outline'}}
+                    </button>
+                    <button class="button button-positive button-clear pull-right">
+                        {{#if inputState}}
+                            {{titleCount}}
+                        {{else}}
+                            {{despCount}}
+                        {{/if}}
+                    </button>
+                </div>
+            {{/autoForm}}
+        </div>
+    {{/ionModal}}
+</template>
