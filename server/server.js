@@ -1,7 +1,8 @@
 /**
  * Created by garie on 12/10/2015.
  */
-Slingshot.createDirective("myFileUploads", Slingshot.S3Storage, {
+if (Meteor.isServer) {
+    Slingshot.createDirective("myFileUploads", Slingshot.S3Storage, {
     bucket: Meteor.settings.bucket,
     acl: Meteor.settings.acl,
     AWSAccessKeyId: Meteor.settings.AWSAccessKeyId,
@@ -49,4 +50,5 @@ function buildRegExp(searchText) {
     var newRegEx = new RegExp("(" + parts.join('|') + ")", "ig");
 
     return new RegExp("(" + parts.join('|') + ")", "ig");
+}
 }
