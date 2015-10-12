@@ -1,0 +1,11 @@
+<template name="commentWish">
+    <div class="bar bar-footer bar-stable" data-keyboard-attach>
+        {{#autoForm collection="Comments" id="comments-new-form" type="insert" class="item-input-wrapper form-send-message"}}
+            {{> afQuickField name='wishId' type="hidden" value=wishId label=false}}
+            {{> afFieldInput name='body' label=false placeholder="  Add a comment!"}}
+            <button class="button button-clear" type="submit">
+                {{> ionIcon icon="ios-paperplane-outline" class="positive"}}
+            </button>
+        {{/autoForm}}
+    </div>
+</template>

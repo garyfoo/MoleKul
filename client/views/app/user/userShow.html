@@ -1,0 +1,46 @@
+<template name="userShow">
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton class="button-positive clear" text=false}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">{{user.profile.firstName}}</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{#with user}}
+                <div class="item item-image">
+                    <img src="{{profile.image}}">
+                </div>
+
+                <div class="item">
+                    <h2>{{profile.firstName}}, {{profile.lastName}}</h2>
+                    <p>Member since {{joinDate user.createdAt}}</p>
+                </div>
+
+                <div class="item">
+                    <p>About {{user.profile.firstName}}</p>
+                    <h5>No Biography Yet!</h5>
+                </div>
+            {{/with}}
+            {{#if ownedChnls}}
+                <div class="item item-divider">
+                    Hosting {{ownedChnlCount}} Channels
+                </div>
+                {{#ionList}}
+                    {{#each ownedChnls}}
+                        <a class="item" href={{pathFor route='channel.show' _id=this._id}}>
+                            <img class="ui mini rounded image channelMenuImg" src="{{image}}">
+                            #{{name}}
+                        </a>
+                    {{/each}}
+                {{/ionList}}
+            {{else}}
+                <div class="item">
+                    Not hosting any channels yet!
+                </div>
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

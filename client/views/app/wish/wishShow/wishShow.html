@@ -1,0 +1,42 @@
+<template name="wishShow">
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton class="button-positive" text=false}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Wish</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear pull-right button-positive" data-action="showActionSheet">
+            {{> ionIcon icon='ios-more'}}
+        </button>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent class="has-footer"}}
+            {{#with wish}}
+                {{#ionList}}
+                    <div class="item item-body">
+                        {{#if images}}
+                            <img class="ui fluid rounded image" src={{images}}>
+                        {{/if}}
+                        <h2>{{title}}</h2>
+                        <p>{{description}}</p>
+                        {{> likeButton}}
+                        <i class="comment outline icon"></i>{{commentCount _id}} Reply
+                        <!--<i class="marker icon"></i>{{location}}-->
+                        <span class="item-note">{{wishDate createdAt}}</span>
+                    </div>
+                {{/ionList}}
+                {{#ionList class="padding-horizontal padding-bottom"}}
+                    <div class="ui feed">
+                        {{#each comments}}
+                            {{> _comment}}
+                        {{/each}}
+                    </div>
+                {{/ionList}}
+            {{/with}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
