@@ -1,0 +1,22 @@
+<template name="_comment">
+    <div class="event">
+        {{#with author}}
+            <a class="label" href="{{pathFor route="user.show" _id=this._id}}">
+                <img src={{profile.image}}>
+            </a>
+        {{/with}}
+        <div class="content" style="margin-top: 0; max-width:85%">
+            <div class="summary">
+                {{#with author}}
+                    <a class="user" href="{{pathFor route="user.show" _id=this._id}}">{{profile.firstName}}</a>
+                {{/with}}
+                <div class="date" style="float: right;">
+                    {{commentDate createdAt}}
+                </div>
+            </div>
+            <div class="text">
+                {{body}}
+            </div>
+        </div>
+    </div>
+</template>
