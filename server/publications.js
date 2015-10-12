@@ -7,7 +7,7 @@ Meteor.publishComposite('homefeed', function(limit) {
     }
     return {
         find: function() {
-            return Wishes.find({channelId:{$in:Meteor.user().profile.subscriptions}}, {sort: {createdAt: -1}, limit: limit } );
+            return Wishes.find({}, {sort: {createdAt: -1}, limit: limit } );
         },
         children: [
             {

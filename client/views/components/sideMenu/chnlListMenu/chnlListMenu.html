@@ -6,11 +6,9 @@
                 <a href="{{pathFor route="newchannel"}}" class="button button-clear button-positive add-channel-btn">
                     {{> ionIcon icon='plus-round positive' }}
                 </a>
-                {{#if addChannels}}
-                    <a href="{{pathFor route="explore"}}" class="button button-clear button-positive search-channel-btn">
-                        {{> ionIcon icon='ios-search-strong positive' }}
-                    </a>
-                {{/if}}
+                <a href="{{pathFor route="explore"}}" class="button button-clear button-positive search-channel-btn">
+                    {{> ionIcon icon='ios-search-strong positive' }}
+                </a>
             </div>
             {{#each userChannels}}
                 <a class="item {{isActivePath path class='assertive closeMenu'}}" href={{pathFor route='channel.show' _id=this._id}}>

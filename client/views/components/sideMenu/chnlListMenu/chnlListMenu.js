@@ -16,18 +16,6 @@ Template.channelListMenu.helpers({
     subscribedChannels: function () {
         return Channels.find({$and: [{owner: {$ne: Meteor.userId()}}, {_id: {$in: Meteor.user().profile.subscriptions}}]});
     },
-    addChannels: function () {
-        var addChannelStatus = false;
-        if (Meteor.user()) {
-            if (Meteor.user().profile.subscriptions.length != 9) {
-                addChannelStatus = true;
-            }
-            else {
-                addChannelStatus = false;
-            }
-        }
-        return addChannelStatus;
-    },
     path: function() {
         return '/channel/' + this._id;
     }
