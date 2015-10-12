@@ -1,0 +1,10 @@
+<template name="authLayout">
+    {{> yield region='authNav'}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{> yield}}
+        {{/ionContent}}
+        {{> yield region='authFooter'}}
+    {{/ionView}}
+</template>

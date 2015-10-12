@@ -37,7 +37,6 @@ mdg:geolocation
 jaymc:google-reverse-geocode
 matb33:collection-hooks
 accounts-password
-useraccounts:unstyled
 useraccounts:iron-routing
 aldeed:template-extension
 useraccounts:ionic

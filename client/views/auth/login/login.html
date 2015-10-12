@@ -1,0 +1,14 @@
+<template name="login">
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton class="button-positive" text=false}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">LOG IN</h1>
+    {{/contentFor}}
+    {{#ionView}}
+        {{#ionContent class="has-header"}}
+            {{> atForm state='signIn'}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
