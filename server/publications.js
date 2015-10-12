@@ -24,6 +24,10 @@ Meteor.publishComposite('homefeed', function(limit) {
     };
 });
 
+Meteor.publish('explore', function() {
+    return Channels.find({}, {fields: {name: 1}})
+});
+
 Meteor.publish('userChannels', function(channelQuery) {
     return Channels.find({_id: {$in: channelQuery}}, {fields: {name: 1, owner: 1, image: 1}});
 });
@@ -82,6 +86,21 @@ Meteor.publishComposite('wish', function(_id) {
                         }
                     }
                 ]
+            }
+        ]
+    };
+});
+
+Meteor.publishComposite('user', function(_id) {
+    return {
+        find: function() {
+            return Meteor.users.find({_id: _id});
+        },
+        children: [
+            {
+                find: function(user) {
+                    return Channels.find({owner: user});
+                }
             }
         ]
     };
