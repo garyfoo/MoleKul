@@ -16,5 +16,30 @@ standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
-autopublish             # Publish all data to the clients (for prototyping)
-insecure                # Allow all DB writes from clients (for prototyping)
+fourseven:scss@2.0.0
+meteoric:ionic-sass
+meteoric:ionicons-sass
+meteoric:ionic
+semantic:ui-css
+iron:router
+aldeed:autoform
+aldeed:collection2
+u2622:persistent-session
+msavin:jetsetter
+okland:camera-ui
+edgee:slingshot
+momentjs:moment
+ongoworks:security
+dburles:google-maps
+jeremy:geocomplete
+fastclick
+mdg:geolocation
+jaymc:google-reverse-geocode
+matb33:collection-hooks
+accounts-password
+useraccounts:unstyled
+useraccounts:iron-routing
+aldeed:template-extension
+useraccounts:ionic
+dburles:collection-helpers
+reywood:publish-composite
